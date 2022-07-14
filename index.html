@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			.bg {
+			      background-color: rgb(0,0,0);
+			    }
+			    .title {
+			    border: 10px outset #dadbab;
+			    background-color: rgb(34, 202, 138);
+			    font: 20px impact;
+			    text-align: center;
+			    }
+			    
+			    .text {
+			    border: 10px double rgb(0, 0, 0);
+			    background-color: rgb(255, 255, 255);
+			    font: 13px arial;
+			    text-align: left;
+			    }
+			    .body {
+			    border: 20px inset rgb(33, 180, 148);
+			    background-color: #ffffff;
+			    font: 20px Garamond;
+			    text-align: left;
+			    }
+			
+		</style>
+		<div class="bg">
+			<link rel="SHORTCUT ICON" href="favicon.ico" type="image/x-icon" />
+			<link rel="ICON" href="favicon.ico" type="image/ico" />
+
+	</head>
+
+	<title>Big Gay Dinosaur's Site lol</title>
+
+	<body>
+	
+
+		<div class="title" id="TitleDIV">
+			<h1>=^.^= hi! =^.^=</h1>
+		</div>
+		<br>
+		<div class="text">
+			<p>My links and stuff:  <a href="https://soundcloud.com/big-gay-dinosaur" rel="noopener noreferrer" target=”_blank”>My Soundcloud(defunct/inactive)</a> | <a href="https://www.youtube.com/channel/UCeDj1u5caqt3m617NNNim6A" rel="noopener noreferrer" target=”_blank”>My YT</a>
+			| <a href="https://crouton.net/" rel="noopener noreferrer" target=”_blank”>crouton</a> | <a href="https://big-gay-dinosaur.github.io/modboxtone/" rel="noopener noreferrer" target=”_blank”>Modbox(higher bpm limit)</a> | 
+			  <a href="https://big-gay-dinosaur.github.io/" rel="noopener noreferrer" target=”_blank”>duplicate this tab i think????</a> | 
+			  <a href="articles.html" rel="noopener noreferrer" >stupid low-effort clickbait articles</a> | 
+			  <a href="random/" rel="noopener noreferrer" >Random & Cool Stuff</a> | 
+			  <a href="agecalculator/index.html" rel="noopener noreferrer" >Age Calculator!</a>
+			
+			
+			
+			</p>
+		</div>
+		<br>
+		<div class="body">
+			<p>Hi! so, i'm big gay dinosaur, i make music and code occasionally, it's fun. This is just my website where i have links to my stuff or something. and also a bio of sorts. </p>
+			<a id="working_directory" href=".">what does this do</a>
+
+			<p>Stuff about me:</p>
+
+			<ul>
+				<li>i gave up putting stuff here, i may or may not just create a different section. i kinda already gave it away anyway lol</li>
+			</ul>
+			
+			<marquee>apparently i'm not supposed to be using marquee ¯\_(ツ)_/¯ </marquee>
+			
+			<script id="ButtonScript">
+				var button = document.getElementById("randButton");
+				var element = document.getElementById('TitleDIV'),
+				    style = window.getComputedStyle(element),
+				    top = style.getPropertyValue('top');
+				button.onclick = ButtonFunc;
+			
+				ButtonFunc();
+				function sleep(ms) {
+				  return new Promise(resolve => setTimeout(resolve, ms));
+				}
+				function rgb(r, g, b) {
+				return "rgb("+r+", "+g+", "+b+")";
+				}
+				function getSign(color) {
+				if(color > 255) {
+				  return -1
+				 } else if(color < 0){
+				   return 1;
+				 } else {
+				   return color;
+				 }
+				}
+				function clamp(value, min, max) {
+				  return Math.max(Math.min(value, max), min)
+				}
+				async function ButtonFunc() {
+				  var r = 0;
+				  var g = 1;
+				  var b = 2;
+				  var loop = true;
+				  var sign1 = 1;
+				  var sign2 = -1;
+				  var sign3 = 1;
+				  while(loop) {
+				    sign1 = getSign(r);
+				    sign2 = getSign(g);
+				    sign3 = getSign(b);
+				    r = clamp(r, 0, 255);
+				    g = clamp(g, 0, 255);
+				    b = clamp(b, 0, 255);
+				    sign1 = clamp(sign1, -1, 1);
+				    sign2 = clamp(sign2, -1, 1);
+				    sign3 = clamp(sign3, -1, 1);
+				    r += 1 * sign1;
+				    g += 2 * sign2;
+				    b += 3 * sign3;
+				    element.style.backgroundColor=rgb(r, g, b);
+				    await sleep(20);
+				    console.log(sign1);
+				    console.log(sign2);
+				    console.log(sign3);
+				 
+				  };
+			
+				console.log("it IS reaching here, right?");
+				console.log(element);
+				}
+				
+				
+			</script>
+
+
+		</div>
+		</div>
+		
+		<a href="https://github.com/big-gay-dinosaur/big-gay-dinosaur.github.io">repo hosted here btw</a>
+	</body>
+</html>
